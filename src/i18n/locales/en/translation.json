@@ -1,0 +1,21 @@
+{
+  "themeSelector": {
+    "selectTheme": "Select theme",
+    "light": "Light theme",
+    "dark": "Dark theme",
+    "highContrast": "High contrast theme",
+    "browser": "Follow browser"
+  },
+  "localeSelector": {
+    "language": {
+      "en_translation": "English",
+      "en_local": "English",
+      "en_english": "English",
+      "zh-CN_translation": "Chinese, China",
+      "zh-CN_local": "中文，中国",
+      "zh-CN_english": "Chinese, China"
+    },
+    "selectLocale_english": "Select locale",
+    "selectLocale_translation": "Select locale"
+  }
+}

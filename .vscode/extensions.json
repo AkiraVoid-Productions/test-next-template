@@ -1,0 +1,29 @@
+{
+  "recommendations": [
+    "ms-ceintl.vscode-language-pack-zh-hans",
+    "streetsidesoftware.code-spell-checker",
+    "exodiusstudios.comment-anchors",
+    "ms-azuretools.vscode-docker",
+    "oouo-diogo-perdigao.docthis",
+    "editorconfig.editorconfig",
+    "dbaeumer.vscode-eslint",
+    "github.vscode-github-actions",
+    "github.vscode-pull-request-github",
+    "spywhere.guides",
+    "lokalise.i18n-ally",
+    "yzhang.markdown-all-in-one",
+    "dominicvonk.parameter-hints",
+    "ionutvmi.path-autocomplete",
+    "christian-kohler.path-intellisense",
+    "esbenp.prettier-vscode",
+    "qcz.text-power-tools",
+    "britesnow.vscode-toggle-quotes",
+    "foxundermoon.shell-format",
+    "mike-co.import-sorter",
+    "arcanis.vscode-zipfs",
+    "aaron-bond.better-comments",
+    "formulahendry.auto-rename-tag",
+    "formulahendry.auto-close-tag",
+    "bierner.folder-source-actions"
+  ]
+}

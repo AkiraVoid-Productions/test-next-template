@@ -1,0 +1,18 @@
+name: Release
+on:
+  workflow_dispatch:
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Setup node
+        uses: actions/setup-node@v3
+      - name: Setup yarn
+        run: corepack enable && corepack prepare @yarn/stable --activate
+      - name: Install dependencies
+        run: yarn
+      - name: Release
+        run: yarn semantic-release

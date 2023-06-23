@@ -1,0 +1,58 @@
+{
+  "name": "next-web-template",
+  "version": "0.1.0",
+  "private": false,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "postinstall": "husky install",
+    "build-template": "node scripts/build-cra-template.cjs"
+  },
+  "lint-staged": {
+    ".{js,jsx,ts,tsx}": [
+      "yarn eslint --fix"
+    ],
+    "*": [
+      "yarn cspell --no-must-find-files",
+      "yarn prettier --ignore-unknown --write"
+    ]
+  },
+  "packageManager": "yarn@3.6.0",
+  "dependencies": {
+    "@fluentui/react-components": "^9.21.0",
+    "@fluentui/react-icons": "^2.0.203",
+    "@formatjs/intl-localematcher": "^0.4.0",
+    "i18next": "^22.5.1",
+    "i18next-browser-languagedetector": "^7.0.2",
+    "i18next-resources-to-backend": "^1.1.4",
+    "negotiator": "^0.6.3",
+    "next": "^13.4.5",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-i18next": "^12.3.1",
+    "scheduler": "^0.19.0 || ^0.20.0"
+  },
+  "devDependencies": {
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/exec": "^6.0.3",
+    "@semantic-release/git": "^10.0.1",
+    "@types/negotiator": "^0.6.1",
+    "@types/node": "^20.3.0",
+    "@types/react": "^18.2.11",
+    "@types/react-dom": "^18.2.4",
+    "conventional-changelog-conventionalcommits": "^6.0.0",
+    "cspell": "^6.31.1",
+    "eslint": "^8.42.0",
+    "eslint-config-next": "^13.4.5",
+    "husky": "^8.0.3",
+    "hygen": "^6.2.11",
+    "lint-staged": "^13.2.2",
+    "pinst": "^3.0.0",
+    "prettier": "^2.8.8",
+    "prettier-plugin-jsdoc": "^0.4.2",
+    "semantic-release": "^21.0.5",
+    "typescript": "^5.1.3"
+  }
+}

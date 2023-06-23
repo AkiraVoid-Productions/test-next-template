@@ -1,0 +1,34 @@
+{
+  "caseSensitive": false,
+  "usePnP": true,
+  "useGitignore": true,
+  "dictionaries": ["custom-words"],
+  "dictionaryDefinitions": [
+    {
+      "name": "custom-words",
+      "path": "./custom-words.txt"
+    }
+  ],
+  "ignorePaths": [
+    "package.json",
+    "tsconfig.json",
+    ".gitattributes",
+    ".eslintrc.json",
+    ".yarnrc.yml",
+    "yarn.lock",
+    ".yarn/**",
+    ".vscode/**",
+    ".husky/**",
+    ".prettierrc.json",
+    ".github/workflows/**",
+    ".releaserc.json",
+    "cspell.json",
+    ".gitignore",
+    ".env",
+    ".env.*",
+    "blog.config.json",
+    "Dockerfile",
+    ".editorconfig",
+    "template.json"
+  ]
+}

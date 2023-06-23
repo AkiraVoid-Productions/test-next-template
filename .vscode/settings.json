@@ -1,0 +1,18 @@
+{
+  "search.exclude": {
+    "**/.yarn": true,
+    "**/.pnp.*": true
+  },
+  "eslint.nodePath": ".yarn/sdks",
+  "prettier.prettierPath": ".yarn/sdks/prettier/index.js",
+  "typescript.tsdk": ".yarn/sdks/typescript/lib",
+  "typescript.enablePromptUseWorkspaceTsdk": true,
+  "editor.tabSize": 2,
+  "editor.formatOnSave": true,
+  "i18n-ally.defaultNamespace": "translation",
+  "i18n-ally.localesPaths": ["src/i18n/locales"],
+  "i18n-ally.pathMatcher": "{locale}/{namespace}.json",
+  "i18n-ally.enabledFrameworks": ["i18next", "react-i18next"],
+  "i18n-ally.namespace": true,
+  "i18n-ally.keystyle": "nested"
+}
