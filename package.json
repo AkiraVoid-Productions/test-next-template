@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "postinstall": "husky install && playwright install",
+    "postinstall": "husky install && playwright install --with-deps",
     "clean": "yarn node ./scripts/clean.js",
     "test:local": "playwright test --ui",
     "test:ci": "playwright test"
