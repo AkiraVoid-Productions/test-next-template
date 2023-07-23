@@ -1,5 +1,5 @@
 import { getSiteConfiguration } from '@/utilities/configuration';
-import { BrowserContext, expect, test, Page } from '@playwright/test';
+import { expect, Page, test } from '@playwright/test';
 
 const config = getSiteConfiguration();
 const localeRegex = /^\/([a-zA-Z0-9\-]+)\/?/;

@@ -10,6 +10,7 @@ import {
   useTranslation as useReactTranslation,
   UseTranslationOptions,
 } from 'react-i18next';
+import { $Tuple } from 'react-i18next/helpers';
 
 import LanguageCode from '@/types/LanguageCode';
 import { useLocale } from '@/utilities/commonClient';
@@ -48,7 +49,7 @@ i18next
  *
  * @template TNamespace The type of i18next namespace.
  * @template TKeyPrefix The type of the prefix of i18next resource key.
- * @param {TNamespace | Readonly<TNamespace>} [ns] The namespace(s) of
+ * @param {TNamespace | $Tuple<TNamespace>} [ns] The namespace(s) of
  *   translations used in the component. Provide an array means target namespace
  *   and all namespaces to fallback to in order. Default to
  *   `SiteConfiguration.i18next.defaultNS` or `"translation"`.
@@ -61,10 +62,10 @@ i18next
  * @export
  */
 export function useTranslation<
-  TNamespace extends Namespace = 'translation',
+  TNamespace extends string = 'translation',
   TKeyPrefix extends KeyPrefix<TNamespace> = undefined
 >(
-  ns?: TNamespace | Readonly<TNamespace>,
+  ns?: TNamespace | $Tuple<TNamespace>,
   options?: UseTranslationOptions<TKeyPrefix>
 ) {
   const currentLocale = useLocale();
