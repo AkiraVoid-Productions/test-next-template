@@ -14,5 +14,8 @@
   "i18n-ally.pathMatcher": "{locale}/{namespace}.json",
   "i18n-ally.enabledFrameworks": ["i18next", "react-i18next"],
   "i18n-ally.namespace": true,
-  "i18n-ally.keystyle": "nested"
+  "i18n-ally.keystyle": "nested",
+  "playwright.env": {
+    "NODE_OPTIONS": "-r ./.pnp.cjs"
+  }
 }

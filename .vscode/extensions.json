@@ -24,6 +24,7 @@
     "aaron-bond.better-comments",
     "formulahendry.auto-rename-tag",
     "formulahendry.auto-close-tag",
-    "bierner.folder-source-actions"
+    "bierner.folder-source-actions",
+    "ms-playwright.playwright"
   ]
 }
