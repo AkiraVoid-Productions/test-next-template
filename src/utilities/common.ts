@@ -26,7 +26,7 @@ export function useIsServer() {
  */
 export function combinePaths(...paths: string[]) {
   let combinedPath = paths
-    .map(path => removeLeadingSlash(removeTrailingSlash(path)))
+    .map(path => removeLeadingSlashes(removeTrailingSlashes(path)))
     .join('/');
   if (paths[0].startsWith('/')) {
     combinedPath = `/${combinedPath}`;
@@ -36,28 +36,30 @@ export function combinePaths(...paths: string[]) {
 }
 
 /**
- * Remove trailing slash from given string.
+ * Remove trailing slashes from given string.
  *
- * @param str The string whose trailing slash to be removed.
- * @returns The given string with trailing slash removed.
+ * @param str The string whose trailing slashes to be removed.
+ * @returns The given string with trailing slashes removed.
  */
-export function removeTrailingSlash(str: string) {
+export function removeTrailingSlashes(str: string): string {
   if (str.endsWith('/')) {
-    return str.substring(0, str.length - 1);
+    const removed = str.substring(0, str.length - 1);
+    return removed.endsWith('/') ? removeTrailingSlashes(removed) : removed;
   }
 
   return str;
 }
 
 /**
- * Remove leading slash from given string.
+ * Remove leading slashes from given string.
  *
- * @param str The string whose leading slash to be removed.
- * @returns The given string with leading slash removed.
+ * @param str The string whose leading slashes to be removed.
+ * @returns The given string with leading slashes removed.
  */
-export function removeLeadingSlash(str: string) {
+export function removeLeadingSlashes(str: string): string {
   if (str.startsWith('/')) {
-    return str.substring(1);
+    const removed = str.substring(1);
+    return removed.startsWith('/') ? removeLeadingSlashes(removed) : removed;
   }
 
   return str;

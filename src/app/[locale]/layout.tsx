@@ -1,3 +1,5 @@
+import React from 'react';
+
 import GenerateMetadata from '@/types/GenerateMetadata';
 import LayoutProps from '@/types/LayoutProps';
 import { combinePaths, getPageAlternates } from '@/utilities/common';

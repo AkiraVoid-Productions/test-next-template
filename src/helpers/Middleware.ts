@@ -9,7 +9,7 @@ import MiddlewareHandler from '@/types/MiddlewareHandler';
  */
 class Middleware {
   private readonly _handlers: {
-    handler: MiddlewareHandler<any, any>;
+    handle: MiddlewareHandler<any, any>;
     options: any;
   }[] = [];
   private readonly _request: NextRequest;
@@ -37,7 +37,7 @@ class Middleware {
       ? TOptions
       : undefined
   ) {
-    this._handlers.push({ handler, options });
+    this._handlers.push({ handle: handler, options });
     return this;
   }
 
@@ -46,7 +46,7 @@ class Middleware {
    *
    * @returns The result of processing.
    */
-  async invokeAsync(): Promise<NextResponse<any> | undefined> {
+  async invokeAsync(): Promise<NextResponse<any> | undefined | void> {
     const nextHandlerIndex = this._invokedMiddleware + 1;
     if (nextHandlerIndex >= this._handlers.length) {
       return;
@@ -59,7 +59,7 @@ class Middleware {
     };
 
     this._invokedMiddleware++;
-    return await nextHandler.handler(
+    return await nextHandler.handle(
       this._request,
       invokeNext,
       nextHandler.options

@@ -32,6 +32,7 @@ export default function AppProvider({ children }: React.PropsWithChildren) {
           <StorageProvider>
             <UserConfigurationProvider>
               <ThemeProvider>{children}</ThemeProvider>
+              {/* {children} */}
             </UserConfigurationProvider>
           </StorageProvider>
         </SSRProvider>

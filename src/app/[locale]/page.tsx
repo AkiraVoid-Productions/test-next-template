@@ -1,11 +1,12 @@
-import LocaleSelector from '@/components/LocaleSelector';
-import ThemeSelector from '@/components/ThemeSelector';
-import { useTranslationAsync } from '@/i18n/server';
-import PageProps from '@/types/PageProps';
 import React from 'react';
 
+import LocaleSelector from '@/components/LocaleSelector';
+import ThemeSelector from '@/components/ThemeSelector';
+import { getTranslatorAsync } from '@/i18n/server';
+import PageProps from '@/types/PageProps';
+
 export default async function Home({ params }: PageProps) {
-  const { t } = await useTranslationAsync(params.locale);
+  const { t } = await getTranslatorAsync(params.locale);
 
   return (
     <div>
@@ -20,8 +21,8 @@ export default async function Home({ params }: PageProps) {
       />
       {/**
        * LocaleSelector hooks to search parameters internally, which means we need to
-       * wrap it in Suspense component to make other parts of this page server-side
-       * render-able.
+       * wrap it in Suspense component to make other parts of this page be able to
+       * render on server-side.
        */}
       <React.Suspense fallback={null}>
         <LocaleSelector

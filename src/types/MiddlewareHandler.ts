@@ -22,9 +22,9 @@ interface MiddlewareHandler<
    */
   (
     request: NextRequest,
-    invokeNext: () => Promise<NextResponse<TBody> | undefined>,
+    invokeNext: () => Promise<NextResponse<TBody> | undefined | void>,
     options?: TOptions
-  ): Promise<NextResponse<TBody> | undefined>;
+  ): Promise<NextResponse<TBody> | undefined | void>;
 }
 
 export default MiddlewareHandler;

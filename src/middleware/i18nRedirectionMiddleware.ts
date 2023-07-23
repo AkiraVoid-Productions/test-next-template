@@ -36,20 +36,22 @@ const i18nRedirectionMiddleware: MiddlewareHandler<unknown, Options> = async (
   const pathnameIsMissingLocale = siteConfig.locales.every(
     locale => !pathname.startsWith(`/${locale}/`) && pathname !== `/${locale}`
   );
-
   if (pathnameIsMissingLocale) {
-    const headerLanguages = new Negotiator({
+    const clientAcceptedLanguages = request.headers.get('accept-language');
+    let headerLanguages = new Negotiator({
       headers: {
-        'accept-language': request.headers.get('accept-language') ?? undefined,
+        'accept-language': clientAcceptedLanguages ?? undefined,
       },
-    }).languages();
+    }).languages(siteConfig.locales);
     const locale = match(
       headerLanguages,
       siteConfig.locales,
       siteConfig.defaultLocale
     );
     return NextResponse.redirect(
-      new URL(`/${locale}/${pathname}`, request.url)
+      new URL(
+        `${request.nextUrl.origin}/${locale}${pathname}${request.nextUrl.search}`
+      )
     );
   }
 

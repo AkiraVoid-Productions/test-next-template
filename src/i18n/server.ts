@@ -50,7 +50,7 @@ const initializeI18nextAsync = async (
  *   this function.
  * @export
  */
-export async function useTranslationAsync(
+export async function getTranslatorAsync(
   languages?: string | string[],
   namespaces?: Namespace<string> | null,
   keyPrefix?: KeyPrefix<Namespace<string>>
