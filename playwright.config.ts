@@ -18,6 +18,11 @@ import { defineConfig, devices } from '@playwright/test';
  *   finally get the CI environment variable of boolean type).
  */
 const isCi = !!process.env.CI;
+const environment = ['development', 'staging', 'production'].includes(
+  process.env.NODE_ENV
+)
+  ? process.env.NODE_ENV
+  : 'development';
 
 export default defineConfig({
   testDir: 'tests',
@@ -51,7 +56,7 @@ export default defineConfig({
     },
   ],
   webServer: {
-    command: 'yarn dev',
+    command: environment === 'development' ? 'yarn dev' : 'yarn start',
     url: 'http://127.0.0.1:3000',
     reuseExistingServer: !isCi,
   },

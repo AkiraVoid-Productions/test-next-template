@@ -1,5 +1,7 @@
 name: Release
 on:
+  push:
+    branches: ['main']
   workflow_dispatch:
 env:
   GH_TOKEN: ${{ secrets.ROBOT_TOKEN }}
@@ -7,6 +9,7 @@ env:
   GIT_AUTHOR_EMAIL: coding@akiravoid.com
   GIT_COMMITTER_NAME: akiravoid-bot
   GIT_COMMITTER_EMAIL: akiravoid-bot
+  NODE_ENV: staging
 
 jobs:
   release:
@@ -26,5 +29,7 @@ jobs:
           yarn pinst --disable
       - name: Build package
         run: yarn build
+      - name: Test
+        run: yarn test:ci
       - name: Release
         run: yarn semantic-release
