@@ -4,13 +4,14 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
+    "build": "next build && yarn gather",
+    "start": "node ./build/server.js",
     "lint": "next lint",
     "postinstall": "husky install && playwright install --with-deps",
     "clean": "yarn node ./scripts/clean.js",
     "test:local": "playwright test --ui",
-    "test:ci": "playwright test"
+    "test:ci": "playwright test",
+    "gather": "yarn node ./scripts/gather.js"
   },
   "lint-staged": {
     ".{js,jsx,ts,tsx}": [
