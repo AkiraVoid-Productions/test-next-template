@@ -20,7 +20,10 @@
         "npmPublish": false
       }
     ],
-    ["@semantic-release/exec", { "prepareCmd": "yarn pinst --enable" }],
+    [
+      "@semantic-release/exec",
+      { "prepareCmd": "yarn pinst --enable && yarn clean" }
+    ],
     "@semantic-release/git",
     ["@semantic-release/github"]
   ]

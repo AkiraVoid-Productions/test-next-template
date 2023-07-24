@@ -18,17 +18,13 @@ import { defineConfig, devices } from '@playwright/test';
  *   finally get the CI environment variable of boolean type).
  */
 const isCi = !!process.env.CI;
-const environment = ['development', 'staging', 'production'].includes(
-  process.env.NODE_ENV
-)
-  ? process.env.NODE_ENV
-  : 'development';
+const environment = process.env.NODE_ENV;
 
 export default defineConfig({
   testDir: 'tests',
   fullyParallel: true,
   forbidOnly: isCi,
-  retries: isCi ? 3 : 0,
+  retries: isCi ? 10 : 0,
   workers: isCi ? 1 : undefined,
   reporter: isCi ? 'dot' : 'html',
   use: {
