@@ -9,7 +9,7 @@ env:
   GIT_AUTHOR_EMAIL: coding@akiravoid.com
   GIT_COMMITTER_NAME: akiravoid-bot
   GIT_COMMITTER_EMAIL: akiravoid-bot
-  NODE_ENV: staging
+  NODE_ENV: test
 
 jobs:
   release:

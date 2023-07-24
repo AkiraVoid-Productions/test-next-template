@@ -4,6 +4,8 @@ on:
     branches: [dev]
   pull_request:
     branches: [main, dev]
+env:
+  NODE_ENV: test
 jobs:
   test:
     timeout-minutes: 60
